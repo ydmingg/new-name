@@ -1,0 +1,708 @@
+/**
+ * 华夏命名 - 首页样式
+ * 古风设计 + 现代交互
+ */
+
+// 色彩系统
+$color-primary: #d4a574;      // 古铜色
+$color-secondary: #f5efe4;    // 宣纸色
+$color-text-primary: #333;
+$color-text-secondary: #666;
+$color-text-tertiary: #999;
+$color-border: #e0d0b8;
+$color-success: #52c41a;
+$color-warning: #faad14;
+$color-error: #f5222d;
+
+// 间距系统
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-2xl: 24px;
+$spacing-3xl: 32px;
+
+// 圆角系统
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-full: 20px;
+
+// 阴影系统
+$shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+$shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+// 过渡效果
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// 字体系统
+$font-family-base: 'SimSun', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-base: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 18px;
+$font-size-2xl: 20px;
+$font-size-3xl: 24px;
+$font-size-4xl: 32px;
+$font-size-5xl: 36px;
+
+// ==================== 页面容器 ====================
+.page {
+  min-height: 100vh;
+  background-color: $color-secondary;
+  padding-bottom: $spacing-3xl;
+  font-family: $font-family-base;
+  color: $color-text-primary;
+}
+
+// ==================== 按钮样式 ====================
+.ghost-button {
+  background: transparent;
+  border: none;
+  color: $color-text-primary;
+  font-size: $font-size-lg;
+  padding: $spacing-md $spacing-lg;
+  text-align: left;
+  margin: $spacing-sm 0;
+  cursor: pointer;
+  transition: all $transition-fast;
+  
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+// ==================== 英雄卡片 ====================
+.hero-card {
+  background: linear-gradient(135deg, #efe0c7 0%, #f5efe4 100%);
+  padding: $spacing-3xl $spacing-lg;
+  text-align: center;
+  border-bottom: 1px solid $color-border;
+  position: relative;
+  overflow: hidden;
+
+  // 装饰背景
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+}
+
+.eyebrow {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  letter-spacing: 2px;
+  margin-bottom: $spacing-md;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  display: block;
+  font-size: $font-size-5xl;
+  font-weight: bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 4px;
+}
+
+.mode-title {
+  display: block;
+  font-size: $font-size-2xl;
+  color: $color-primary;
+  margin-bottom: $spacing-md;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.subtitle {
+  display: block;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+// ==================== 表单卡片 ====================
+.form-card {
+  background: white;
+  margin: $spacing-lg;
+  padding: $spacing-2xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.field {
+  margin-bottom: $spacing-2xl;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  width: 100%;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  font-size: $font-size-lg;
+  background: #fafaf8;
+  color: $color-text-primary;
+  transition: all $transition-fast;
+  font-family: $font-family-base;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+  }
+
+  &::placeholder {
+    color: $color-text-tertiary;
+  }
+}
+
+// ==================== 分段控制 ====================
+.segmented {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.segment {
+  flex: 1;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: white;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  transition: all $transition-fast;
+  cursor: pointer;
+  font-family: $font-family-base;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.active {
+    background: $color-primary;
+    color: white;
+    border-color: $color-primary;
+    box-shadow: $shadow-md;
+  }
+}
+
+// ==================== 风格网格 ====================
+.style-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.style-chip {
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  background: white;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  transition: all $transition-fast;
+  cursor: pointer;
+  font-family: $font-family-base;
+  white-space: nowrap;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.active {
+    background: $color-primary;
+    color: white;
+    border-color: $color-primary;
+    box-shadow: $shadow-md;
+  }
+}
+
+// ==================== 系统选择器 ====================
+.system-selector {
+  margin-top: $spacing-2xl;
+}
+
+.system-selector-btn {
+  width: 100%;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: #fafaf8;
+  color: $color-text-primary;
+  font-size: $font-size-sm;
+  text-align: left;
+  transition: all $transition-fast;
+  cursor: pointer;
+  font-family: $font-family-base;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:active {
+    background: white;
+    box-shadow: $shadow-sm;
+  }
+}
+
+// ==================== 生成按钮 ====================
+.generate-button {
+  width: 100%;
+  padding: $spacing-lg;
+  background: linear-gradient(135deg, $color-primary 0%, #c9935f 100%);
+  color: white;
+  border: none;
+  border-radius: $radius-md;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  margin-top: $spacing-2xl;
+  transition: all $transition-fast;
+  cursor: pointer;
+  font-family: $font-family-base;
+  box-shadow: $shadow-md;
+  letter-spacing: 1px;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-sm;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// ==================== 错误提示 ====================
+.error {
+  display: block;
+  color: $color-error;
+  font-size: $font-size-xs;
+  margin-top: $spacing-md;
+  animation: slideDown $transition-fast ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-$spacing-sm);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ==================== 结果列表 ====================
+.results {
+  margin: $spacing-2xl $spacing-lg;
+}
+
+.results-head {
+  margin-bottom: $spacing-2xl;
+}
+
+.results-title {
+  display: block;
+  font-size: $font-size-2xl;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 1px;
+}
+
+.results-tip {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+// ==================== 名字网格 ====================
+.name-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+}
+
+.name-card {
+  background: white;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+  border: 2px solid transparent;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-sm;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.full-name {
+  display: block;
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 2px;
+}
+
+.pinyin {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 1px;
+}
+
+.courtesy {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.tag {
+  display: inline-block;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: rgba(212, 165, 116, 0.1);
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-sm;
+  margin-top: $spacing-md;
+  font-weight: 500;
+}
+
+// ==================== 详情页面 ====================
+.detail-panel {
+  padding: $spacing-lg;
+}
+
+.detail-card {
+  background: white;
+  padding: $spacing-2xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}
+
+.detail-kicker {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  letter-spacing: 1.5px;
+  margin-bottom: $spacing-lg;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.detail-name {
+  display: block;
+  font-size: $font-size-5xl;
+  font-weight: bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 4px;
+}
+
+.detail-pinyin {
+  display: block;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-lg;
+  letter-spacing: 2px;
+}
+
+// ==================== 章节 ====================
+.section {
+  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+  border-bottom: 1px solid #f0e8dc;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.section-title {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  color: $color-primary;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: $spacing-md;
+}
+
+.section-text {
+  display: block;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.8;
+}
+
+.section-pinyin {
+  display: block;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  margin-top: $spacing-sm;
+  letter-spacing: 1px;
+}
+
+.highlight-section {
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(245, 239, 228, 0.5) 100%);
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  border-left: 4px solid $color-primary;
+  margin: $spacing-2xl 0;
+}
+
+// ==================== 操作按钮 ====================
+.action-buttons {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-2xl;
+}
+
+.action-btn {
+  flex: 1;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: white;
+  color: $color-text-primary;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  transition: all $transition-fast;
+  cursor: pointer;
+  font-family: $font-family-base;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.collect-btn {
+  &:active {
+    background: $color-secondary;
+  }
+}
+
+.share-btn {
+  background: $color-primary;
+  color: white;
+  border-color: $color-primary;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+// ==================== 命名体系选择页面 ====================
+.system-selection-panel {
+  padding: $spacing-lg;
+}
+
+.systems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  margin-top: $spacing-2xl;
+}
+
+.system-card {
+  background: white;
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  transition: all $transition-fast;
+  border: 2px solid transparent;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $shadow-sm;
+  }
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.system-name {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+  letter-spacing: 0.5px;
+}
+
+.system-desc {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-md;
+}
+
+.system-features {
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  display: inline-block;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: rgba(212, 165, 116, 0.1);
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-sm;
+  font-weight: 500;
+}
+
+// ==================== 响应式设计 ====================
+@media (max-width: 768px) {
+  .name-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: $font-size-4xl;
+  }
+
+  .hero-card {
+    padding: $spacing-2xl $spacing-lg;
+  }
+
+  .form-card {
+    margin: $spacing-md;
+    padding: $spacing-lg;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: $font-size-3xl;
+  }
+
+  .full-name {
+    font-size: $font-size-2xl;
+  }
+
+  .detail-name {
+    font-size: $font-size-4xl;
+  }
+
+  .segmented {
+    flex-direction: column;
+  }
+
+  .segment {
+    width: 100%;
+  }
+}
+
+// ==================== 动画和过渡 ====================
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.fade-in {
+  animation: fadeIn $transition-normal ease;
+}
+
+.slide-up {
+  animation: slideUp $transition-normal ease;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
